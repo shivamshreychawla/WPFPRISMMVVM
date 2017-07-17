@@ -80,19 +80,10 @@ namespace ITHelpDesk.Modules.Employee.ViewModels
         {
             employee = employeeService.GetCurrentEmployeeDetail(employeeId);
             //employee = employeeService.GetCurrentEmployeeDetail();           
-            if (employee == null)
-            {
-                EmployeeName = string.Empty;
-                ManagerName = string.Empty;
-                WorkStation = string.Empty;
-            }
-            else
-            {
-                string mgrName = employeeService.GetManagerNameOfCurrentEmp();
-                ManagerName = mgrName;
-                EmployeeName = employee.EmpName;
-                WorkStation = employee.WorkStation;
-            }
+            EmployeeName = employee?.EmpName ?? string.Empty;
+            WorkStation = employee?.WorkStation ?? string.Empty;
+            ManagerName = employee != null ? employeeService.GetManagerNameOfCurrentEmp() : string.Empty;
+         
            
         }
         #endregion
