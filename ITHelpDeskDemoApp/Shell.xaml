@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/CompositeWPF"
-        Title="Shell" Height="600" Width="600">
+        Title="Shell" Height="600" Width="600" Background="#FFE6E2E2">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
@@ -12,13 +12,13 @@
         </Grid.RowDefinitions>
         <Rectangle  Grid.Row="0" >
             <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0,0.5" SpreadMethod="Reflect">
-                    <GradientStop Color="#009900" Offset="0"/>
-                    <GradientStop Color="White" Offset="1" />
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC3BBBB" Offset="0.028"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="IT Help Desk Application"  Foreground="Brown"  FontSize="35" FontFamily="Corbel"/>
+        <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="IT Help Desk Application"  Foreground="#FF171616"  FontSize="35" FontFamily="Century"/>
         <ItemsControl Grid.Row="1" prism:RegionManager.RegionName="NavigationRegion" />
         <Border Grid.Row="2" >
             <ItemsControl prism:RegionManager.RegionName="EmployeeInfoRegion" />

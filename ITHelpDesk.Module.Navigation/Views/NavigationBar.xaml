@@ -6,21 +6,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-        <Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
-        <ToolBar Grid.Row="0" FontSize="18" Background="BlanchedAlmond" >
-            <Border  BorderBrush="#FF9900" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF9900">
-                <Button Background="#FFCC33" Command="{Binding LoadSoftwareModuleCommand}"  >Software</Button>
+        <ToolBar Grid.Row="0" FontSize="18" Background="Gray" >
+            <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
+                <Button Background="#FFDEDCD6" Command="{Binding LoadSoftwareModuleCommand}" >Software</Button>
             </Border>
             <Separator />
-            <Border  BorderBrush="#FF9900" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF9900">
-                <Button Background="#FFCC33" Command="{Binding LoadHardwareModuleCommand}" >Hardware</Button>
+            <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
+                <Button Background="#FFDEDCD6" Command="{Binding LoadHardwareModuleCommand}" >Hardware</Button>
             </Border>
             <Separator />
-            <Border  BorderBrush="#FF9900" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF9900">
-                <Button Background="#FFCC33" Command="{Binding RequestModuleCommand}" >All Request</Button>
+            <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
+                <Button Background="#FFDEDCD6" Command="{Binding RequestModuleCommand}" >All Request</Button>
             </Border>
         </ToolBar>
     </Grid>

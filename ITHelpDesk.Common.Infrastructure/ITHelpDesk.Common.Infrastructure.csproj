@@ -79,7 +79,7 @@
     <Compile Include="Events\EmployeeUpdatedEvent.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HardwareCategory.cs" />
-    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\ITRequest.cs" />
     <Compile Include="Models\SoftwareCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\HelpDeskXMLRepository.cs" />

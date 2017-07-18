@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ITHelpDesk.Common.Infrastructure.Models
 {
-    public class Request
+    public class ITRequest
     {
         public int Id { get; set; }
         public string Type { get; set; }

@@ -7,8 +7,8 @@
     <ProjectGuid>{5FC99D27-1A36-46BB-8FA9-670692931F64}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ITHelpDesk.Module.Sataus</RootNamespace>
-    <AssemblyName>ITHelpDesk.Module.Sataus</AssemblyName>
+    <RootNamespace>ITHelpDesk.Module.Request</RootNamespace>
+    <AssemblyName>ITHelpDesk.Module.Request</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -101,6 +101,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\$(SolutionName)\$(OutDir)\$(ProjectName).dll" /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

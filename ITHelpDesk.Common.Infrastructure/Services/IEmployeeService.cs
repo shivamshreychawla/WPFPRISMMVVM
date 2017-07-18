@@ -18,6 +18,6 @@ namespace ITHelpDesk.Common.Infrastructure.Services
         List<HardwareItems> GetHardwareItemsByCategory(string hardwareCategoryName);
         bool SaveSoftwareRequest(string selectedCategory, string selectedSoftware, string comment);
         bool SaveHardwareRequest(string selectedCategory, string selectedSoftware, string comment);
-        List<Request> GetAllRequest();
+        List<ITRequest> GetAllRequest();
     }
 }

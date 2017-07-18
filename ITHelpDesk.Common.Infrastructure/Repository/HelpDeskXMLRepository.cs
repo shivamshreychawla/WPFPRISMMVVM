@@ -205,12 +205,12 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
             }
             return isSaveSuccessful;
         }
-        public List<Request> GetAllRequest(int empId)
+        public List<ITRequest> GetAllRequest(int empId)
         {
             IEnumerable<XElement> items = from el in ex.Descendants("RequestInfo") select el;
             var allrequest = (from t in items.Descendants("Request")
                               where ((int)t.Element("employeeId") == empId)
-                              select new Request
+                              select new ITRequest
                               {
                                   Id = (int)t.Element("Id"),
                                   Type = t.Element("type").Value,

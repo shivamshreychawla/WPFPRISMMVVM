@@ -6,14 +6,14 @@ using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Prism.Events;
 using ITHelpDesk.Common.Infrastructure.Events;
 
-namespace ITHelpDesk.Module.RequestM.ViewModels
+namespace ITHelpDesk.Module.Request.ViewModels
 {
     public class RequestViewModel : NotificationObject 
     {
         #region Private Fields
-        private ObservableCollection<Request> allRequest;
+        private ObservableCollection<ITRequest> allRequest;
         private IEmployeeService employeeService;
-        private Request selectedRequest;
+        private ITRequest selectedRequest;
         private bool isDetailVisible = false;
         IEventAggregator eventAggregator;       
         #endregion
@@ -33,7 +33,7 @@ namespace ITHelpDesk.Module.RequestM.ViewModels
         }
 
        #region Public Properties
-        public ObservableCollection<Request> AllRequests
+        public ObservableCollection<ITRequest> AllRequests
         {
             get { return allRequest; }
             set
@@ -42,7 +42,7 @@ namespace ITHelpDesk.Module.RequestM.ViewModels
                 RaisePropertyChanged("AllRequests");
             }
         }
-        public Request SelectedRequest
+        public ITRequest SelectedRequest
         {
             get { return selectedRequest; }
             set
@@ -69,8 +69,8 @@ namespace ITHelpDesk.Module.RequestM.ViewModels
        #region Private Method
         private void fetchAllRequest()
         {
-            List<Request> listOfRequest = employeeService.GetAllRequest();
-            AllRequests = new ObservableCollection<Request>(listOfRequest);
+            List<ITRequest> listOfRequest = employeeService.GetAllRequest();
+            AllRequests = new ObservableCollection<ITRequest>(listOfRequest);
            
         }
         #endregion

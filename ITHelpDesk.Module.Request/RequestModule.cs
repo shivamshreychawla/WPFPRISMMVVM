@@ -1,9 +1,10 @@
-﻿using ITHelpDesk.Module.RequestM.Views;
+﻿using ITHelpDesk.Module.Request.ViewModels;
+using ITHelpDesk.Module.Request.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 
-namespace ITHelpDesk.Module.RequestM
+namespace ITHelpDesk.Module.Request
 {
    public class RequestModule: IModule
     {
@@ -15,13 +16,15 @@ namespace ITHelpDesk.Module.RequestM
         {
             this.container = container;
             this.regionManager = regionManager;
+            container.RegisterType<RequestViewModel>();
+            container.RegisterType<RequestDetail>();
         }
 
         public void Initialize()
         {
             var view = this.container.Resolve<RequestDetail>();
             this.regionManager.Regions["RequestInfoRegion"].Add(view, "RequestDetail");
-
+            
         }         
     }
 }

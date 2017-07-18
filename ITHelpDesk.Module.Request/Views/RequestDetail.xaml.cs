@@ -1,7 +1,7 @@
-﻿using ITHelpDesk.Module.RequestM.ViewModels;
+﻿using ITHelpDesk.Module.Request.ViewModels;
 using System.Windows.Controls;
 
-namespace ITHelpDesk.Module.RequestM.Views
+namespace ITHelpDesk.Module.Request.Views
 {
 
     public partial class RequestDetail : UserControl

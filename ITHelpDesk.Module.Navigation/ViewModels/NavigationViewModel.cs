@@ -1,19 +1,22 @@
 ﻿using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace ITHelpDesk.Module.Navigation.ViewModels
 {
-    public class NavigationViewModel //: INavigationViewModel
+    public class NavigationViewModel : NotificationObject
     {
         #region Private Fields
 
         private DelegateCommand loadSoftwareCommand;
         private DelegateCommand loadHardwareCommand;
         private DelegateCommand requestCommand;
+        private string vlasti;
+
         #endregion
         public NavigationViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
         {
@@ -23,8 +26,21 @@ namespace ITHelpDesk.Module.Navigation.ViewModels
             loadSoftwareCommand = new DelegateCommand(loadSoftwareModule, canLoadSoftwareModule);
             loadHardwareCommand = new DelegateCommand(loadHardwareModule, canLoadHardwareModule);
             requestCommand = new DelegateCommand(loadStatusModule, canLoadStatusModule);
+            Vlasti = "NAVIGATION";
         }
         #region Public Properties
+
+        public string Vlasti
+        {
+            get { return vlasti; }
+
+            set
+            {
+                vlasti = value;
+                RaisePropertyChanged("Vlasti");
+            }
+        }
+
         public IRegionManager RegionManager { get; set; }
         public IUnityContainer UnityContainer { get; set; }
         public IModuleManager ModuleManager { get; set; }
@@ -52,11 +68,13 @@ namespace ITHelpDesk.Module.Navigation.ViewModels
                 return requestCommand;
             }
         }
+
+
         #endregion
 
         #region Private Methods
-       
-       
+
+
         private bool canLoadHardwareModule()
         {
             return true;
@@ -72,8 +90,8 @@ namespace ITHelpDesk.Module.Navigation.ViewModels
 
         private void loadSoftwareModule()
         {
-            // LoadModule method is responsible to load and initialize the module
-            // It loads only if module is not initialize already.
+            //LoadModule method is responsible to load and initialize the module
+            //It loads only if module is not initialize already.
             ModuleManager.LoadModule("SoftwareModule");
             var requestInfoRegion = RegionManager.Regions["RequestInfoRegion"];
             var newView = requestInfoRegion.GetView("SoftwareDetail");

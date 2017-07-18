@@ -3,15 +3,21 @@
   <Employees>
     <Employee>
       <id>1</id>
-      <name>Snesh</name>
+      <name>Adrian</name>
       <managerId>0</managerId>
       <workStation>WS-201</workStation>
     </Employee>
     <Employee>
       <id>2</id>
-      <name>Praveen</name>
+      <name>Shivam</name>
       <managerId>1</managerId>
       <workStation>WS-202</workStation>
+    </Employee>
+    <Employee>
+      <id>3</id>
+      <name>Sorab</name>
+      <managerId>1</managerId>
+      <workStation>WS-203</workStation>
     </Employee>
   </Employees>
   <Softwares>
@@ -126,6 +132,22 @@
       <category>Accessories</category>
       <item>RAM</item>
       <comment>ddd</comment>
+    </Request>
+    <Request>
+      <Id>6</Id>
+      <employeeId>3</employeeId>
+      <type>Hardawre</type>
+      <category>Accessories</category>
+      <item>RAM</item>
+      <comment>Jai Shree Ram</comment>
+    </Request>
+    <Request>
+      <Id>7</Id>
+      <employeeId>3</employeeId>
+      <type>Software</type>
+      <category>IDE</category>
+      <item>Eclipse</item>
+      <comment>JAVA JAVA</comment>
     </Request>
   </RequestInfo>
 </HelpDeskDB>

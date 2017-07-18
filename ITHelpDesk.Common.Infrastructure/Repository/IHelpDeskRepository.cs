@@ -16,6 +16,6 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
         List<HardwareItems> GetHardwareItemsByCategory(string hardwareCategoryName);
         bool SaveSoftwareRequest(int empId, string selectedCategory, string selectedSoftware, string comment);
         bool SaveHardwareRequest(int empId, string selectedCategory, string selectedSoftware, string comment);
-        List<Request> GetAllRequest(int empId);
+        List<ITRequest> GetAllRequest(int empId);
     }
 }

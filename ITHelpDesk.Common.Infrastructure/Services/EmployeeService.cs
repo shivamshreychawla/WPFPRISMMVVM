@@ -58,7 +58,7 @@ namespace ITHelpDesk.Common.Infrastructure.Services
             else
                 return dataSource.SaveHardwareRequest(CurrentEmployeeId, selectedCategory, selectedSoftware, comment);
         }
-        public List<Request> GetAllRequest()
+        public List<ITRequest> GetAllRequest()
         {
             return dataSource.GetAllRequest(CurrentEmployeeId);
         }
