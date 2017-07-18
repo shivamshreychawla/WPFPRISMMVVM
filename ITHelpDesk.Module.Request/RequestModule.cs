@@ -1,4 +1,5 @@
-﻿using ITHelpDesk.Module.Request.ViewModels;
+﻿using ITHelpDesk.Common.Infrastructure;
+using ITHelpDesk.Module.Request.ViewModels;
 using ITHelpDesk.Module.Request.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -23,8 +24,9 @@ namespace ITHelpDesk.Module.Request
         public void Initialize()
         {
             var view = this.container.Resolve<RequestDetail>();
-            this.regionManager.Regions["RequestInfoRegion"].Add(view, "RequestDetail");
+            this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(RequestDetail));
             
-        }         
+        }
+
     }
 }

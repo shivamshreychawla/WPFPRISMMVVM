@@ -1,4 +1,5 @@
-﻿using ITHelpDesk.Modules.Hardware.Views;
+﻿using ITHelpDesk.Common.Infrastructure;
+using ITHelpDesk.Modules.Hardware.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
@@ -24,7 +25,7 @@ namespace ITHelpDesk.Modules.Hardware
         public void Initialize()
         {
             var view = this.container.Resolve<HardwareDetail>();
-            this.regionManager.Regions["RequestInfoRegion"].Add(view, "HardwareDetail");
+           this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(HardwareDetail));
         }
     }
 }

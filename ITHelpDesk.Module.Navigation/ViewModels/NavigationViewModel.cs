@@ -10,25 +10,10 @@ namespace ITHelpDesk.Module.Navigation.ViewModels
 {
     public class NavigationViewModel : NotificationObject
     {
-        #region Private Fields
-
-        private DelegateCommand loadSoftwareCommand;
-        private DelegateCommand loadHardwareCommand;
-        private DelegateCommand requestCommand;
-        private string vlasti;
-
-        #endregion
-        public NavigationViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
-        {
-            this.RegionManager = regionManager;
-            this.ModuleManager = moduleManager;
-            this.UnityContainer = container;
-            loadSoftwareCommand = new DelegateCommand(loadSoftwareModule, canLoadSoftwareModule);
-            loadHardwareCommand = new DelegateCommand(loadHardwareModule, canLoadHardwareModule);
-            requestCommand = new DelegateCommand(loadStatusModule, canLoadStatusModule);
-            Vlasti = "NAVIGATION";
-        }
         #region Public Properties
+        public ICommand LoadSoftwareCommand { get; set; }
+        public ICommand LoadHardwareCommand { get; set; }
+        public ICommand RequestCommand { get; set; }
 
         public string Vlasti
         {
@@ -46,47 +31,25 @@ namespace ITHelpDesk.Module.Navigation.ViewModels
         public IModuleManager ModuleManager { get; set; }
         #endregion
 
-        #region Command
-        public ICommand LoadSoftwareModuleCommand
-        {
-            get
-            {
-                return loadSoftwareCommand;
-            }
-        }
-        public ICommand LoadHardwareModuleCommand
-        {
-            get
-            {
-                return loadHardwareCommand;
-            }
-        }
-        public ICommand RequestModuleCommand
-        {
-            get
-            {
-                return requestCommand;
-            }
-        }
 
-
+        #region Private Fields
+    
+        private string vlasti;
         #endregion
 
+        public NavigationViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
+        {
+            this.RegionManager = regionManager;
+            this.ModuleManager = moduleManager;
+            this.UnityContainer = container;
+            LoadSoftwareCommand = new DelegateCommand(loadSoftwareModule);
+            LoadHardwareCommand = new DelegateCommand(loadHardwareModule);
+            RequestCommand = new DelegateCommand(loadStatusModule);
+            Vlasti = "NAVIGATION";
+        }
+      
+
         #region Private Methods
-
-
-        private bool canLoadHardwareModule()
-        {
-            return true;
-        }
-        private bool canLoadSoftwareModule()
-        {
-            return true;
-        }
-        private bool canLoadStatusModule()
-        {
-            return true;
-        }
 
         private void loadSoftwareModule()
         {

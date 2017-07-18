@@ -12,16 +12,17 @@
         </Grid.RowDefinitions>
         <ToolBar Grid.Row="0" FontSize="18" Background="Gray" >
             <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
-                <Button Background="#FFDEDCD6" Command="{Binding LoadSoftwareModuleCommand}" >Software</Button>
+                <Button Background="#FFDEDCD6" Command="{Binding LoadSoftwareCommand}" >Software</Button>
             </Border>
             <Separator />
             <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
-                <Button Background="#FFDEDCD6" Command="{Binding LoadHardwareModuleCommand}" >Hardware</Button>
+                <Button Background="#FFDEDCD6" Command="{Binding LoadHardwareCommand}" >Hardware</Button>
             </Border>
             <Separator />
             <Border  BorderBrush="#FF423C33" BorderThickness="2" CornerRadius="5,5,5,5" Background="#FF4B3F2D">
-                <Button Background="#FFDEDCD6" Command="{Binding RequestModuleCommand}" >All Request</Button>
+                <Button Background="#FFDEDCD6" Command="{Binding RequestCommand}" >All Request</Button>
             </Border>
         </ToolBar>
+    
     </Grid>
 </UserControl>

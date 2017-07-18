@@ -16,7 +16,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Grid.Column="0"  Margin="10,10,0,0">
-            <Label Content="IT HelpDesk Request Module:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+            <Label Content="IT HelpDesk Request Module:" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left"></Label>
             <Label  Content="Select Request Id:" FontSize="14" Margin="88,5,0,0" ></Label>
             <StackPanel Name="stkDetail" Visibility="{Binding IsDetailVisible,  Converter={StaticResource boolToVisbility}}" >
                 <Label  Content="Type:" FontSize="14" Margin="88,5,0,0"></Label>

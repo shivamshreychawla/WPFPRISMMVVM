@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\EmployeeUpdatedEvent.cs" />
+    <Compile Include="RegionNames.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HardwareCategory.cs" />
     <Compile Include="Models\ITRequest.cs" />

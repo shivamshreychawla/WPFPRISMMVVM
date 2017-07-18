@@ -19,6 +19,12 @@
       <managerId>1</managerId>
       <workStation>WS-203</workStation>
     </Employee>
+    <Employee>
+      <id>4</id>
+      <name>Mr.Brodl</name>
+      <managerId>1</managerId>
+      <workStation>WS-204</workStation>
+    </Employee>
   </Employees>
   <Softwares>
     <Categories>
@@ -148,6 +154,14 @@
       <category>IDE</category>
       <item>Eclipse</item>
       <comment>JAVA JAVA</comment>
+    </Request>
+    <Request>
+      <Id>8</Id>
+      <employeeId>4</employeeId>
+      <type>Software</type>
+      <category>IDE</category>
+      <item>VS</item>
+      <comment>I Love Max</comment>
     </Request>
   </RequestInfo>
 </HelpDeskDB>
