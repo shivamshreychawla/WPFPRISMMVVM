@@ -163,5 +163,13 @@
       <item>VS</item>
       <comment>I Love Max</comment>
     </Request>
+    <Request>
+      <Id>9</Id>
+      <employeeId>4</employeeId>
+      <type>Hardawre</type>
+      <category>System</category>
+      <item>Laptop</item>
+      <comment>I need a MAC</comment>
+    </Request>
   </RequestInfo>
 </HelpDeskDB>

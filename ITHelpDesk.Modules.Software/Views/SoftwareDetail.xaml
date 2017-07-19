@@ -22,7 +22,7 @@
             <ComboBox  DisplayMemberPath="Name" Text="{Binding SelectedSoftwareCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   ItemsSource="{Binding SoftwareCategories}" Margin="0,10,0,0" FontSize="14" ></ComboBox>
             <ComboBox  DisplayMemberPath="ItemName" ItemsSource="{Binding SoftwareList}" Margin="0,10,0,0"
-                       Text="{Binding SelectedSoftwareName, Mode=TwoWay}" FontSize="14" Foreground="Blue"></ComboBox>
+                       Text="{Binding SelectedSoftwareName, Mode=TwoWay}" FontSize="14" ></ComboBox>
             <TextBox TextWrapping="Wrap" Margin="0,10,0,0" Height="75" Text="{Binding Comment, Mode=TwoWay}"></TextBox>
             <Button Margin="0,30,0,0"  Content="Submit Request" Command="{Binding SubmitRequestCommand}"></Button>
         </StackPanel>
