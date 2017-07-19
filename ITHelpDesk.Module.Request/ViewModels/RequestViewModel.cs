@@ -5,10 +5,11 @@ using ITHelpDesk.Common.Infrastructure.Services;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Prism.Events;
 using ITHelpDesk.Common.Infrastructure.Events;
+using ITHelpDesk.Common.Infrastructure;
 
 namespace ITHelpDesk.Module.Request.ViewModels
 {
-    public class RequestViewModel : NotificationObject 
+    public class RequestViewModel : ViewModelBase
     {
         #region Private Fields
         private ObservableCollection<ITRequest> allRequest;
@@ -20,6 +21,7 @@ namespace ITHelpDesk.Module.Request.ViewModels
 
         public RequestViewModel(IEmployeeService employeeService,IEventAggregator eventAggregator)
         {
+            Title = "All Requests";
             this.employeeService = employeeService;
             this.eventAggregator = eventAggregator;
             eventAggregator.GetEvent<EmployeeUpdatedEvent>().Subscribe(refereshModuleHandler);

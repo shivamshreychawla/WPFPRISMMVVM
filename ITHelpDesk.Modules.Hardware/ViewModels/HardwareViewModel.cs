@@ -1,4 +1,5 @@
-﻿using ITHelpDesk.Common.Infrastructure.Models;
+﻿using ITHelpDesk.Common.Infrastructure;
+using ITHelpDesk.Common.Infrastructure.Models;
 using ITHelpDesk.Common.Infrastructure.Repository;
 using ITHelpDesk.Common.Infrastructure.Services;
 using Microsoft.Practices.Prism;
@@ -10,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace ITHelpDesk.Modules.Hardware.ViewModels
 {
-    public class HardwareViewModel : NotificationObject, IActiveAware
+    public class HardwareViewModel : ViewModelBase, IActiveAware
     {
         #region Private Fields
         private int categoryId;
@@ -29,6 +30,7 @@ namespace ITHelpDesk.Modules.Hardware.ViewModels
 
         public HardwareViewModel(IEmployeeService employeeService)
         {
+            Title = "Hardware";
             this.employeeService = employeeService;
             fetchHardwareCategory();
             submitRequestCommand = new DelegateCommand(saveRequest);

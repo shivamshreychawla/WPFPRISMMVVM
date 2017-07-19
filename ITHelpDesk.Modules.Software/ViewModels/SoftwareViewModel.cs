@@ -1,8 +1,10 @@
-﻿using ITHelpDesk.Common.Infrastructure.Models;
+﻿using ITHelpDesk.Common.Infrastructure;
+using ITHelpDesk.Common.Infrastructure.Models;
 using ITHelpDesk.Common.Infrastructure.Repository;
 using ITHelpDesk.Common.Infrastructure.Services;
 using Microsoft.Practices.Prism;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ using System.Collections.ObjectModel;
 
 namespace ITHelpDesk.Modules.Software.ViewModels
 {
-    public class SoftwareViewModel : NotificationObject, IActiveAware
+    public class SoftwareViewModel : ViewModelBase, IActiveAware
     {
         #region Private Fields
         private int categoryId;
@@ -28,6 +30,7 @@ namespace ITHelpDesk.Modules.Software.ViewModels
         #endregion
         public SoftwareViewModel(IEmployeeService employeeService)
         {
+            Title = "Software";
             this.employeeService = employeeService;
             fetchSoftwareCategory();
             submitRequestCommand = new DelegateCommand(saveRequest);
@@ -209,8 +212,16 @@ namespace ITHelpDesk.Modules.Software.ViewModels
             Comment = null;
         }
 
+
         public event EventHandler IsActiveChanged;
 
+        #endregion
+
+        #region INavigationAware overriden Methods
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+        }
         #endregion
 
     }

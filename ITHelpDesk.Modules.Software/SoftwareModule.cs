@@ -6,6 +6,7 @@ using Microsoft.Practices.Unity;
 
 namespace ITHelpDesk.Modules.Software
 {
+   // [ShivamModule("SoftwareModule")]
     public class SoftwareModule : IModule
     {
         private readonly IRegionManager regionManager;
@@ -18,12 +19,18 @@ namespace ITHelpDesk.Modules.Software
             this.regionManager = regionManager;
         }
 
+
         public void Initialize()
         {
-            var view = this.container.Resolve<SoftwareDetail>();
-            this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(SoftwareDetail));
-
-
+            //var view = this.container.Resolve<SoftwareDetail>();
+            //this.regionManager.Regions[RegionNames.mainRegion].Add(view, "SoftwareDetail");
+            container.RegisterType<object, SoftwareDetail>("SoftwareDetail");
         }
+
+       //// [Initialization]
+       // public void ShivamIsCrazy()
+       // {
+
+       // }
     }
 }

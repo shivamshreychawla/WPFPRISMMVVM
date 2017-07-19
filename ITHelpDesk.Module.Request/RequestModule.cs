@@ -23,9 +23,10 @@ namespace ITHelpDesk.Module.Request
 
         public void Initialize()
         {
-            var view = this.container.Resolve<RequestDetail>();
-            this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(RequestDetail));
-            
+            //var view = this.container.Resolve<RequestDetail>();
+            //this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(RequestDetail));
+            container.RegisterType<object, RequestDetail>("RequestDetail");
+
         }
 
     }

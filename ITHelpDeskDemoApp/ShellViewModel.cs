@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Input;
 
@@ -49,8 +50,39 @@ namespace ITHelpDeskDemoApp
             var requestInfoRegion = RegionManager.Regions[RegionNames.mainRegion];
             string viewName = ModuleName.Substring(0, ModuleName.IndexOf("Module")) + "Detail";
             ModuleManager.LoadModule(ModuleName);
-            var view = requestInfoRegion.GetView(viewName);
-            requestInfoRegion.Activate(view);
+            //var view = requestInfoRegion.GetView(viewName);
+            //requestInfoRegion.Activate(view);
+            //requestInfoRegion.RequestNavigate("View");
+           // var p = new NavigationParameters();
+            RegionManager.RequestNavigate(RegionNames.mainRegion, viewName);
+
+            //Crazy reflection time
+
+            //    foreach(Assembly asse in AppDomain.CurrentDomain.GetAssemblies())
+            //    {
+            //        if (asse.GetName().Name.Contains(ModuleName.Substring(0, ModuleName.IndexOf("Module"))))
+            //        {
+            //            foreach(var x in asse.GetTypes())
+            //            {
+            //                var attributes = x.GetCustomAttributes(typeof(ShivamModuleAttribute), true);
+
+            //                if (attributes.Length > 0)
+            //                {
+            //                    //we found the attribute, yay
+            //                    foreach (var m in x.GetMethods())
+            //                    { 
+            //                        var mattributes = m.GetCustomAttributes(typeof(InitializationAttribute), true);
+
+            //                        if (mattributes.Length > 0)
+            //                        {
+            //                            m.Invoke()
+            //                        }
+            //                    }
+            //                }
+            //        }
+
+            //    }
+            //}
         }
     }
 }

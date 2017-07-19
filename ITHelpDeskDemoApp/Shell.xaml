@@ -4,9 +4,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/CompositeWPF"
         xmlns:infra="clr-namespace:ITHelpDesk.Common.Infrastructure;assembly=ITHelpDesk.Common.Infrastructure"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:ITHelpDeskDemoApp"
         Title="Shell" Height="600" Width="750" Background="#FFE6E2E2">
     <Window.Resources>
-        <ContentControl x:Key="contextKey" Content="{Binding}" />
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFBBB3B3" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ContentControl Content="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 7 0"></ContentControl>
+                            <Button HorizontalAlignment="Right" Content="x" Grid.Column="1">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <local:CloseTabAction></local:CloseTabAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="ToggleButton">
             <Setter Property="Background" Value="#FF1F3B53"/>
             <Setter Property="Foreground" Value="#FF000000"/>
@@ -79,8 +111,8 @@
                                             <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
                                                 <GradientStop Color="#FFFFFFFF" Offset="0" />
                                                 <GradientStop Color="#F9FFFFFF" Offset="0.375" />
-                                                <GradientStop Color="#E5FFFFFF" Offset="0.625" />
-                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                                <GradientStop Color="#FFE6E2E2" Offset="0.625" />
+                                                <GradientStop Color="#FFE6E2E2" Offset="1" />
                                             </LinearGradientBrush>
                                         </Rectangle.Fill>
                                     </Rectangle>
@@ -103,14 +135,13 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="150" />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height ="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600"></ColumnDefinition>
-            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Rectangle  Grid.Row="0" >
             <Rectangle.Fill>
@@ -120,63 +151,24 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-      
+
         <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="IT Help Desk Application"  Foreground="#FF171616"  FontSize="35" FontFamily="Century"/>
-        <ItemsControl Grid.Row="1" prism:RegionManager.RegionName="NavigationRegion" />
-        <Border Grid.Row="2" >
+        <Border Grid.Row="1" >
             <ItemsControl prism:RegionManager.RegionName="EmployeeInfoRegion" />
         </Border>
         <Separator Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Bottom" Height="10" BorderBrush="#193441"/>
-        <Border Grid.Row="3"  BorderBrush="#193441"   >
-            <ContentControl prism:RegionManager.RegionName="{x:Static infra:RegionNames.mainRegion}" />
-        </Border>
-        <!--<Menu  Grid.Column="1" FontSize="15">
-            <MenuItem Header="Software"/>
-            <MenuItem Header="Hardware"/>
-            <MenuItem Header="All Requests"/>
-        </Menu>-->
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <TabControl Background="Transparent"   BorderBrush="#193441"  TabStripPlacement="Top"
+             prism:RegionManager.RegionName="{x:Static infra:RegionNames.mainRegion}"/>
+        </ScrollViewer>
         <Rectangle Grid.Column="1" VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="#193441" HorizontalAlignment="Left" Grid.RowSpan="4"/>
-
-        <!--<Grid  Grid.Column="1" Visibility="Collapsed">
-            <StackPanel>
-                <RadioButton Content="Software" GroupName="myTabs"   >
-                    <RadioButton.Template>
-                        <ControlTemplate>
-                            <ToggleButton Command="{Binding LoadSoftwareCommand}" CommandParameter="software"  IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                          Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
-                        </ControlTemplate>
-                    </RadioButton.Template>
-                </RadioButton>
-                <RadioButton Content="Hardware" GroupName="myTabs" >
-                    <RadioButton.Template>
-                        <ControlTemplate>
-                            <ToggleButton  Command="{Binding LoadSoftwareCommand}" CommandParameter="hardware" IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                          Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
-                        </ControlTemplate>
-                    </RadioButton.Template>
-                </RadioButton>
-                <RadioButton Content="All Requests" GroupName="myTabs" >
-                    <RadioButton.Template>
-                        <ControlTemplate>
-                            <ToggleButton  Command="{Binding LoadSoftwareCommand}" CommandParameter="all" IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                          Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
-                        </ControlTemplate>
-                    </RadioButton.Template>
-                </RadioButton>            
-            </StackPanel>
-        </Grid>-->
-
         <Grid  Grid.Column="1" Visibility="Visible">
-            <ItemsControl
-                x:Name="SearchResultList"                
-                ItemsSource="{Binding Modules}">
-
+            <ItemsControl ItemsSource="{Binding Modules}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <RadioButton FontWeight="Bold" FontSize="14" Content="{Binding ModuleDisplay}" GroupName="myTabs"  >
@@ -189,7 +181,6 @@
                         </RadioButton>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
-
             </ItemsControl>
         </Grid>
 

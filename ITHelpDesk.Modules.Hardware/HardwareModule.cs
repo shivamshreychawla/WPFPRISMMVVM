@@ -24,8 +24,9 @@ namespace ITHelpDesk.Modules.Hardware
 
         public void Initialize()
         {
-            var view = this.container.Resolve<HardwareDetail>();
-           this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(HardwareDetail));
+           // var view = this.container.Resolve<HardwareDetail>();
+           //this.regionManager.Regions[RegionNames.mainRegion].Add(view, nameof(HardwareDetail));
+            container.RegisterType<object, HardwareDetail>("HardwareDetail");
         }
     }
 }

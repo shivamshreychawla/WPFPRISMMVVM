@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\EmployeeUpdatedEvent.cs" />
+    <Compile Include="InitializationAttribute.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HardwareCategory.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Repository\IHelpDeskRepository.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\IEmployeeService.cs" />
+    <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ITHelpDeskDB.xml" />
