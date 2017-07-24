@@ -1,4 +1,5 @@
-﻿using ITHelpDesk.Common.Infrastructure.Models;
+﻿using ITHelpDesk.Common.Infrastructure.App_Data;
+using ITHelpDesk.Common.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,16 +14,18 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
 
         private XDocument itHeplData;
 
-        private string filePath = "../../../ITHelpDesk.Common.Infrastructure/App_Data/ITHelpDeskDB.xml";
+       // private string filePath = "../../../ITHelpDesk.Common.Infrastructure/App_Data/ITHelpDeskDB.xml";
         XElement ex;
         public HelpDeskXMLRepository()
         {
-            ex = XElement.Load(filePath);
+            // ex = XElement.Load(filePath);
+            ex = XElement.Parse(HelpDeskData.data);
         }
         public Employee GetEmployeeById(int empId)
         {
-            bool ifFileExist = File.Exists(filePath);
-            itHeplData = XDocument.Load(filePath);
+           // bool ifFileExist = File.Exists(filePath);
+            //itHeplData = XDocument.Load(filePath);
+            itHeplData = XDocument.Parse(HelpDeskData.data);
 
             var currentEmployee = (from t in itHeplData.Descendants("Employee")
                                    where ((int)t.Element("id") == empId)
@@ -37,9 +40,10 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
         }
         public string GetManagerNameById(int empId)
         {
-            bool ifFileExist = File.Exists(filePath);
+           // bool ifFileExist = File.Exists(filePath);
 
-            itHeplData = XDocument.Load(filePath);
+           // itHeplData = XDocument.Load(filePath);
+            itHeplData = XDocument.Parse(HelpDeskData.data);
 
 
             var employeeManagerId = (from t in itHeplData.Descendants("Employee")
@@ -154,7 +158,7 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
                     new XElement("item", selectedSoftware),
                     new XElement("comment", comment)
                     ));
-                ex.Save(filePath);
+               // ex.Save(filePath);
 
                 isSaveSuccessful = true;
             }
@@ -194,7 +198,7 @@ namespace ITHelpDesk.Common.Infrastructure.Repository
                     new XElement("item", selectedSoftware),
                     new XElement("comment", comment)
                     ));
-                ex.Save(filePath);
+               // ex.Save(filePath);
 
                 isSaveSuccessful = true;
             }

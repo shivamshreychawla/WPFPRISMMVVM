@@ -19,6 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITHelpDesk.Module.Request",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITHelpDesk.Common.Infrastructure", "ITHelpDesk.Common.Infrastructure\ITHelpDesk.Common.Infrastructure.csproj", "{08B7E599-8CF4-4666-AE50-6FEB9CB5894C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManifestManagerUtility", "ManifestManagerUtility", "{10FE74DE-347D-47B0-96D5-8657B830A2B8}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\schaw3\Desktop\Adding Modules.docx = C:\Users\schaw3\Desktop\Adding Modules.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManifestManagerUtility", "ManifestManagerUtility\ManifestManagerUtility.csproj", "{393FA119-6D27-47D0-AE09-0E6E24283594}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +56,10 @@ Global
 		{08B7E599-8CF4-4666-AE50-6FEB9CB5894C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08B7E599-8CF4-4666-AE50-6FEB9CB5894C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08B7E599-8CF4-4666-AE50-6FEB9CB5894C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{393FA119-6D27-47D0-AE09-0E6E24283594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393FA119-6D27-47D0-AE09-0E6E24283594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393FA119-6D27-47D0-AE09-0E6E24283594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393FA119-6D27-47D0-AE09-0E6E24283594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +70,6 @@ Global
 		{07BD3A47-0C15-49D8-8EC5-5476C6326008} = {B603D5B1-6043-483F-B3C7-7C8EB6AF3C6D}
 		{5FC99D27-1A36-46BB-8FA9-670692931F64} = {B603D5B1-6043-483F-B3C7-7C8EB6AF3C6D}
 		{08B7E599-8CF4-4666-AE50-6FEB9CB5894C} = {91E65794-5786-4988-A4C4-19F199A858C9}
+		{393FA119-6D27-47D0-AE09-0E6E24283594} = {10FE74DE-347D-47B0-96D5-8657B830A2B8}
 	EndGlobalSection
 EndGlobal

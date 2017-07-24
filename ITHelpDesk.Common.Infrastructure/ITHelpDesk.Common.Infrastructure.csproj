@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\HelpDeskData.cs" />
     <Compile Include="Events\EmployeeUpdatedEvent.cs" />
     <Compile Include="InitializationAttribute.cs" />
     <Compile Include="RegionNames.cs" />
@@ -91,7 +92,7 @@
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ITHelpDeskDB.xml" />
+    <Resource Include="App_Data\ITHelpDeskDB.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
