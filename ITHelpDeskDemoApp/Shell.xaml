@@ -6,7 +6,7 @@
         xmlns:infra="clr-namespace:ITHelpDesk.Common.Infrastructure;assembly=ITHelpDesk.Common.Infrastructure"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:ITHelpDeskDemoApp"
-        Title="Magpie" Height="600" Width="750" Background="#FFE6E2E2">
+        Title="Magpie" Height="900" Width="1250" Background="#FFE6E2E2">
     <Window.Resources>
         <Style TargetType="TabItem">
             <Setter Property="Header" Value="{Binding DataContext.Title}"></Setter>
@@ -152,12 +152,12 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content='"Magpie"'  Foreground="#FF171616"  FontSize="35" FontFamily="Century"/>
+        <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content='Magpie'  Foreground="#FF171616"  FontSize="35" FontFamily="Century"/>
         <Border Grid.Row="1" >
             <ItemsControl prism:RegionManager.RegionName="EmployeeInfoRegion" />
         </Border>
         <Separator Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Bottom" Height="10" BorderBrush="#193441"/>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" >
             <TabControl Background="Transparent"   BorderBrush="#193441"  TabStripPlacement="Top"
              prism:RegionManager.RegionName="{x:Static infra:RegionNames.mainRegion}"/>
         </ScrollViewer>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="PackagePreviewTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="492" Width="1000">
+    <Grid>
+        <TreeView Name="TvPackagePreview" Margin="10,10,0,39" SelectedItemChanged="TvPackagePreview_SelectedItemChanged" HorizontalAlignment="Left" Width="313"/>
+        <TextBox Name="TbParsedFeature" Margin="10,0,10,11" TextWrapping="Wrap" Text="TextBox" RenderTransformOrigin="0.292,1.087" Height="23" VerticalAlignment="Bottom"/>
+        <ListView Name="LwContents" HorizontalAlignment="Left" Margin="328,10,0,39" Width="158" SelectionChanged="LwContents_SelectionChanged"/>
+        <Image Name="ImgPreviewImage" Margin="491,10,10,39"/>
+
+    </Grid>
+</UserControl>

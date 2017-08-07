@@ -21,10 +21,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITHelpDesk.Common.Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManifestManagerUtility", "ManifestManagerUtility", "{10FE74DE-347D-47B0-96D5-8657B830A2B8}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\schaw3\Desktop\Adding Modules.docx = C:\Users\schaw3\Desktop\Adding Modules.docx
+		Adding Modules.docx = Adding Modules.docx
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManifestManagerUtility", "ManifestManagerUtility\ManifestManagerUtility.csproj", "{393FA119-6D27-47D0-AE09-0E6E24283594}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DigitasLBi.Modules", "DigitasLBi.Modules", "{C7AD4214-371C-41F6-A7C5-19F15EC0DF5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagePreviewTest", "PackagePreviewTest\PackagePreviewTest\PackagePreviewTest.csproj", "{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +64,10 @@ Global
 		{393FA119-6D27-47D0-AE09-0E6E24283594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{393FA119-6D27-47D0-AE09-0E6E24283594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{393FA119-6D27-47D0-AE09-0E6E24283594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +79,6 @@ Global
 		{5FC99D27-1A36-46BB-8FA9-670692931F64} = {B603D5B1-6043-483F-B3C7-7C8EB6AF3C6D}
 		{08B7E599-8CF4-4666-AE50-6FEB9CB5894C} = {91E65794-5786-4988-A4C4-19F199A858C9}
 		{393FA119-6D27-47D0-AE09-0E6E24283594} = {10FE74DE-347D-47B0-96D5-8657B830A2B8}
+		{EBB81E7C-9D62-437C-8BAC-2D5C1A7D44E2} = {C7AD4214-371C-41F6-A7C5-19F15EC0DF5B}
 	EndGlobalSection
 EndGlobal
